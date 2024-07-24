@@ -163,6 +163,6 @@ function calculateRectangleArea(agent) {
   let wide = agent.parameters.wide;
   let length = agent.parameters.length;
   let result = wide * length;
-  agent.add(`หาพื้นที่สี่เหลี่ยม ${wide} ซม ควาามยาว ${length}ซม`)
-
+  agent.add(`หาพื้นที่สี่เหลี่ยม ${wide} ซม ควาามยาว ${length}ซม`);
+  agent.add(`=${result}`);
 }
