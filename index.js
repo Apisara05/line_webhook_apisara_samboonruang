@@ -151,6 +151,7 @@ app.post("/webhook", (req, res) => {
   intentMap.set("Default Welcome Intent", welcome);
   intentMap.set("Default Fallback Intent", fallback);
   intentMap.set("BMI - custom - yes", bodyMassIndex);
+  intentMap.set("area - rectangle - custom - yes", calculateRectangleArea);
   agent.handleRequest(intentMap);
 
 })
@@ -158,3 +159,10 @@ app.post("/webhook", (req, res) => {
 app.listen(port, () => {
   console.log("Server is running at http://localhost:" + port);
 })
+function calculateRectangleArea(agent) {
+  let wide = agent.parameters.wide;
+  let length = agent.parameters.length;
+  let result = wide * length;
+  agent.add(`หาพื้นที่สี่เหลี่ยม ${wide} ซม ควาามยาว ${length}ซม`)
+
+}
